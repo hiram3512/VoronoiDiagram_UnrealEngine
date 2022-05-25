@@ -30,13 +30,13 @@ void AMyActor::Process()
 			FVector Start = FVector(0, VoronoiCell.Vertices[x - 1].X, VoronoiCell.Vertices[x - 1].Y);
 			FVector End = FVector(0, VoronoiCell.Vertices[x].X, VoronoiCell.Vertices[x].Y);
 			UKismetSystemLibrary::DrawDebugLine(this, Start, End,
-			                                    FColor::MakeRandomColor(), 2);
+			                                    FColor::MakeRandomColor(), DisplayTime);
 			if (x == VoronoiCell.Vertices.Num() - 1)
 			{
 				Start = FVector(0, VoronoiCell.Vertices[x].X, VoronoiCell.Vertices[x].Y);
 				End = FVector(0, VoronoiCell.Vertices[0].X, VoronoiCell.Vertices[0].Y);
 				UKismetSystemLibrary::DrawDebugLine(this, Start, End,
-				                                    FColor::MakeRandomColor(), 2);
+				                                    FColor::MakeRandomColor(), DisplayTime);
 			}
 		}
 	}

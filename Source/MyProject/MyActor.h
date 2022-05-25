@@ -36,4 +36,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	int RelaxationCycles = 2;
+
+	UPROPERTY(EditAnywhere)
+	float DisplayTime = 5;
 };
