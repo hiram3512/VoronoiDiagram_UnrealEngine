@@ -39,4 +39,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float DisplayTime = 5;
+
+	UPROPERTY(EditAnywhere)
+	bool bShowPoint = true;
 };

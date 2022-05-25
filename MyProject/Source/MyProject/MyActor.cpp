@@ -16,12 +16,16 @@ void AMyActor::Process()
 		int X = FMath::RandRange(0, Width - 1);
 		int Y = FMath::RandRange(0, Height - 1);
 		Points.Add(FIntPoint(X, Y));
+		if (bShowPoint)
+		{
+			FVector Pos = FVector(0, X, Y);
+			UKismetSystemLibrary::DrawDebugBox(this, Pos, FVector(1, 1, 1),
+				FColor::White, FRotator::ZeroRotator, DisplayTime);
+		}
 	}
-
 	TSharedPtr<FVoronoiDiagram> VoronoiDiagram(new FVoronoiDiagram(FIntRect(0, 0, Width, Height)));
 	VoronoiDiagram->AddPoints(Points);
 	VoronoiDiagram->GenerateSites(RelaxationCycles);
-
 	for (int32 i = 0; i < VoronoiDiagram->GeneratedSites.Num(); ++i)
 	{
 		FVoronoiDiagramGeneratedSite& VoronoiCell = VoronoiDiagram->GeneratedSites[i];
