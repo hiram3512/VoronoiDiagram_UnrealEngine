@@ -1,8 +1,5 @@
 # VoronoiDiagram_UnrealEngine
 
-based on: https://github.com/vlad221/VoronoiDiagram
-
-
 ![image](/Others/10.png)
 ![image](/Others/11.png)
 ![image](/Others/12.png)
